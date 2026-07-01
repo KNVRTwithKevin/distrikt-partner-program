@@ -176,6 +176,17 @@
     .form-row { grid-template-columns: 1fr; }
     .nav-cta { display: none; }
   }
+
+  @media print {
+    @page { size: Letter; margin: 0.5in; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    html, body { background: #fff !important; }
+    body::before, body::after { display: none !important; }
+    .nav { position: static !important; }
+    section.wrap { padding: 36px 0 !important; }
+    .band, .card-i, .step, .chip, .who-head, .who-list, .section-head { break-inside: avoid; }
+    .section-head { break-after: avoid; }
+  }
 </style>
 </head>
 <body>
